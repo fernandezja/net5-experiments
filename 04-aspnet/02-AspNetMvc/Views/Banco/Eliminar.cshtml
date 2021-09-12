@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model _02_AspNetMvc.Entities.Banco
+@{
+    ViewData["Title"] = "Eliminación de Banco";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Eliminacion De Banco</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10">
+        <form method="Post" asp-action="Eliminar" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="BancoId" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" placeholder="Nombre Banco" readonly />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Eliminar Banco" />
+            </div>
+        </form>
+    </div>
+</div>

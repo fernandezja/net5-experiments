@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<_02_AspNetMvc.Entities.Banco>
+@{
+    var _tempMensaje = string.Empty;
+    if (TempData["Mensaje"]!=null)
+    {
+        _tempMensaje = TempData["Mensaje"].ToString();
+    }
+}
+
+
+@if (!string.IsNullOrEmpty(_tempMensaje))
+{
+    <div class="alert alert-info">
+        @_tempMensaje
+    </div>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Banco</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var banco in Model)
+        {
+        <tr>
+            <td>@banco.Nombre</td>
+            <td>
+                <a class="btn" href="/banco/eliminar/@banco.BancoId">Eliminar</a>
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>

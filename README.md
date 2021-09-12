@@ -23,3 +23,4 @@ Code Kata with .NET 5 (practices, explorations, experiments, tests or just playi
 | Example   |      Description      |
 |----------|-------------|
 | [01-AspNetReactRedux.sln](04-aspnet/01-AspNetReactRedux) |Simple ASP.NET React with Redux from template|
+| [02-AspNetMvc.sln](04-aspnet/02-AspNetMvc) |ASP.NET MVC|
